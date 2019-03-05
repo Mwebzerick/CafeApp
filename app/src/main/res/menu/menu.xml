@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/option"
+            android:title="Option"
+            app:showAsAction="collapseActionView"
+            ></item>
+    <item
+        android:id="@+id/sett"
+        android:title="Settings"
+        app:showAsAction="collapseActionView"
+        ></item>
+    <item
+        android:id="@+id/food"
+        android:title="Food Menu"
+        app:showAsAction="collapseActionView"
+        ></item>
+</menu>
