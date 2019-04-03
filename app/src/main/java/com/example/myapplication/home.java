@@ -44,6 +44,10 @@ public class home extends AppCompatActivity {
             case R.id.sett:
                 Toast.makeText(this, "Option Unavailable", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.frag:
+                Intent intent1 = new Intent(this, fragment_home.class);
+                startActivity(intent1);
+                break;
             default:
                 Toast.makeText(this, "Option Unavailable", Toast.LENGTH_SHORT).show();
         }

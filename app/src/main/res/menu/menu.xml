@@ -16,4 +16,7 @@
         android:title="Food Menu"
         app:showAsAction="collapseActionView"
         ></item>
+    <item
+        android:id="@+id/frag"
+        android:title="orders" />
 </menu>
