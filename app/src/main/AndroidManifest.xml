@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".three"
-            android:label="Cafe Ark Menu"></activity>
-        <activity android:name=".home"
-            android:label="home"/>
+        <activity android:name=".SendEmail"></activity>
+        <activity
+            android:name=".three"
+            android:label="Cafe Ark Menu" />
+        <activity
+            android:name=".home"
+            android:label="home" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -38,8 +38,10 @@ public class home extends AppCompatActivity {
                 Intent intent = new Intent(this, three.class);
                 startActivity(intent);
                 break;
-            case R.id.option:
+            case R.id.email:
                 Toast.makeText(this, "Option Unavailable", Toast.LENGTH_SHORT).show();
+                Intent in = new Intent(this,SendEmail.class);
+                startActivity(in);
                 break;
             case R.id.sett:
                 Toast.makeText(this, "Option Unavailable", Toast.LENGTH_SHORT).show();
