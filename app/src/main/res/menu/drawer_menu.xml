@@ -27,7 +27,7 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_send"
-                android:title="send" />
+                android:title="List" />
         </menu>
     </item>
 </menu>

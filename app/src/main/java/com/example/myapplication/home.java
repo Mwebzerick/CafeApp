@@ -10,36 +10,38 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
 public class home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
- android.support.v7.widget.Toolbar toolbar;
+    android.support.v7.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-     toolbar  =findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+//        toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-     ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawer,R.string.navigation_open_string,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, R.string.navigation_open_string, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if (savedInstanceState==null){
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new MessageFragment()).commit();
-        navigationView.setCheckedItem(R.id.nav_message);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new MessageFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_message);
         }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_message:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new MessageFragment()).commit();
@@ -53,10 +55,11 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
                         new ProfileFragment()).commit();
                 break;
             case R.id.nav_share:
-                Toast.makeText(this,"share",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "share", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_send:
-                Toast.makeText(this,"send",Toast.LENGTH_SHORT).show();
+              Intent intent=new Intent(this,three.class);
+              startActivity(intent);
                 break;
         }
 
@@ -64,11 +67,11 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
         return true;
     }
 
-    public void onBackPressed(){
-        if (drawer.isDrawerOpen(GravityCompat.START)){
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }else{
-        super.onBackPressed();
+        } else {
+            super.onBackPressed();
         }
 
     }
@@ -101,7 +104,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
                 break;
             case R.id.email:
                 Toast.makeText(this, "Option Unavailable", Toast.LENGTH_SHORT).show();
-                Intent in = new Intent(this,SendEmail.class);
+                Intent in = new Intent(this, SendEmail.class);
                 startActivity(in);
                 break;
             case R.id.sett:
@@ -115,5 +118,10 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void Addfood(View view) {
+        Intent intent = new Intent(this, EditableListView.class);
+        startActivity(intent);
     }
 }

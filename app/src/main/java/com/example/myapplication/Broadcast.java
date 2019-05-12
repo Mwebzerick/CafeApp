@@ -15,7 +15,7 @@ public class Broadcast extends AppCompatActivity {
     public void sendMsg(View v){
         String uniqueActionString="com.androidbook.intents.testbc";
         Intent broadcastIntent= new Intent(uniqueActionString);
-        broadcastIntent.putExtra("message","CafeArk welcomes you");
+        broadcastIntent.putExtra("message","Cafeark");
         sendBroadcast(broadcastIntent);
 
     }
